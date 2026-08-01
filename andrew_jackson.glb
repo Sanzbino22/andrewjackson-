@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Jackson AR</title>
+    <!-- Importing the model-viewer web component, which handles the AR functionality -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        model-viewer {
+            width: 80%;
+            height: 80%;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+      The model-viewer component.
+      - src="andrew_jackson.glb" is the location of your 3D model file.
+      - ar enables the Augmented Reality feature.
+      - ar-modes specifies the order of preference for the AR tech (WebXR for modern, Scene Viewer for fallback).
+      - camera-controls lets you use mouse/touch to interact with the 3D view.
+      - poster is an image shown before the model loads (optional).
+    -->
+    <model-viewer src="andrew_jackson.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="poster.png" alt="A 3D model of Andrew Jackson">
+    </model-viewer>
+
+</body>
+</html>
